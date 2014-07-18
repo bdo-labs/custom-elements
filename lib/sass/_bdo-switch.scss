@@ -1,0 +1,42 @@
+@import '../../node_modules/styles/lib/sass/variables-and-mixins';
+.bdo-switch {
+	$border: 1px solid $grey;
+
+    display: inline-block;
+
+    position: relative;
+    height: 1.2em;
+    width: 5em;
+
+    border: $border;
+
+    color: $grey;
+    background: darken($grey, 20%);
+
+    cursor: pointer;
+
+	span {
+		display: inline-block;
+
+		box-sizing: border-box;
+
+		position: absolute;
+		margin: 0;
+		left: 0;
+		top: 0;
+
+		width: 50%;
+		height: 100%;
+
+		text-align: center;
+		background: white;
+		border-right: $border;
+		transition: 0.2s ease-out;
+	}
+
+	&.off span {
+		left: 50%;
+		border-right: none;
+		border-left: $border;
+	}
+}

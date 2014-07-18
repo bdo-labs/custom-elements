@@ -47,3 +47,36 @@
 .bdo-progress .bar.low .low {
   background: #ac4139;
 }
+
+/* line 2, sass/_bdo-switch.scss */
+.bdo-switch {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  width: 5em;
+  border: 1px solid #969696;
+  color: #969696;
+  background: #636363;
+  cursor: pointer;
+}
+/* line 18, sass/_bdo-switch.scss */
+.bdo-switch span {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background: white;
+  border-right: 1px solid #969696;
+  transition: 0.2s ease-out;
+}
+/* line 37, sass/_bdo-switch.scss */
+.bdo-switch.off span {
+  left: 50%;
+  border-right: none;
+  border-left: 1px solid #969696;
+}
