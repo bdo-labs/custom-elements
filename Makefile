@@ -29,6 +29,7 @@ TESTS:=$(shell find lib -name '*.test.js')
 build: node_modules $(SRC)
 	mkdir -p $@
 	atomify
+	cp index.html $@/
 	@echo ""
 	@echo "    custom-elements was built!"
 	@echo ""
@@ -42,5 +43,5 @@ test: build
 clean:
 	rm -fr build
 
-.PHONY: clean test
+.PHONY: clean test build
 

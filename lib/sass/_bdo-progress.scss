@@ -1,0 +1,59 @@
+@import '../../node_modules/styles/lib/sass/_variables-and-mixins.scss';
+
+.bdo-progress {
+	position: relative;
+	padding: 5px 0;
+
+	// Caret indicates progress
+	.indicator {
+		position: absolute;
+		top: 7px;
+
+		// Let's center the caret!
+		width: 12px;
+		margin: 0 0 0 -6px;
+
+		text-align: center;
+		font-size: 10px;
+		color: darken($grey, 20%);
+
+		// Fake a white border
+		text-shadow: 0 -2px white;
+	}
+
+	// Different sections along the bar
+	.bar {
+		background: desaturate($warning-color, 30%);
+		width: 100%;
+		height: 8px;
+
+		clear: both;
+
+		> div {
+			height: 100%;
+			width: 0%;
+		}
+
+		.high {
+			background: desaturate($good-color, 20%);
+			float: right;
+		}
+
+		.low {
+			background: desaturate($danger-color, 30%);
+		}
+	}
+
+	// Different states
+	.bar.high .high {
+		background: $good-color;
+	}
+
+	.bar.medium {
+		background: $warning-color;
+	}
+
+	.bar.low .low {
+		background: $danger-color;
+	}
+}
