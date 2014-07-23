@@ -80,3 +80,28 @@
   border-right: none;
   border-left: 1px solid #969696;
 }
+
+/* line 3, sass/_bdo-dropdown.scss */
+.bdo-dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* line 7, sass/_bdo-dropdown.scss */
+.bdo-dropdown > *:last-child {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  min-width: 100%;
+  width: auto;
+  background: white;
+  box-sizing: border-box;
+  border: 4px solid #287fb8;
+  padding: 10px;
+  margin: 0;
+}
+/* line 26, sass/_bdo-dropdown.scss */
+.bdo-dropdown .visible {
+  display: inline-block;
+}

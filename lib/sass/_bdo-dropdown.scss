@@ -1,0 +1,29 @@
+﻿@import "../../node_modules/styles/lib/sass/_variables-and-mixins.scss";
+
+.bdo-dropdown {
+	position: relative;
+	display: inline-block;
+
+	> *:last-child {
+		display: none;
+
+
+		position: absolute;
+		left: 0;
+		top: 100%;
+		z-index: 1;
+		min-width: 100%;
+		width: auto;
+
+		background: white;
+
+		box-sizing: border-box;
+		border: 4px solid #287fb8;
+		padding: 10px;
+		margin: 0;
+	}
+
+	.visible {
+		display: inline-block;
+	}
+}
