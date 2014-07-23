@@ -1,0 +1,82 @@
+/* line 3, sass/_bdo-progress.scss */
+.bdo-progress {
+  position: relative;
+  padding: 5px 0;
+}
+/* line 8, sass/_bdo-progress.scss */
+.bdo-progress .indicator {
+  position: absolute;
+  top: 7px;
+  width: 12px;
+  margin: 0 0 0 -6px;
+  text-align: center;
+  font-size: 10px;
+  color: #636363;
+  text-shadow: 0 -2px white;
+}
+/* line 25, sass/_bdo-progress.scss */
+.bdo-progress .bar {
+  background: #ac8b4e;
+  width: 100%;
+  height: 8px;
+  clear: both;
+}
+/* line 32, sass/_bdo-progress.scss */
+.bdo-progress .bar > div {
+  height: 100%;
+  width: 0%;
+}
+/* line 37, sass/_bdo-progress.scss */
+.bdo-progress .bar .high {
+  background: #6f7866;
+  float: right;
+}
+/* line 42, sass/_bdo-progress.scss */
+.bdo-progress .bar .low {
+  background: #8a5f5b;
+}
+/* line 48, sass/_bdo-progress.scss */
+.bdo-progress .bar.high .high {
+  background: #708e50;
+}
+/* line 52, sass/_bdo-progress.scss */
+.bdo-progress .bar.medium {
+  background: #d29628;
+}
+/* line 56, sass/_bdo-progress.scss */
+.bdo-progress .bar.low .low {
+  background: #ac4139;
+}
+
+/* line 2, sass/_bdo-switch.scss */
+.bdo-switch {
+  display: inline-block;
+  position: relative;
+  height: 1.2em;
+  width: 5em;
+  border: 1px solid #969696;
+  color: #969696;
+  background: #636363;
+  cursor: pointer;
+}
+/* line 18, sass/_bdo-switch.scss */
+.bdo-switch span {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background: white;
+  border-right: 1px solid #969696;
+  transition: 0.2s ease-out;
+}
+/* line 37, sass/_bdo-switch.scss */
+.bdo-switch.off span {
+  left: 50%;
+  border-right: none;
+  border-left: 1px solid #969696;
+}
