@@ -26,4 +26,12 @@
 	.visible {
 		display: inline-block;
 	}
+
+	> ul {
+		text-align: left;
+
+		> li {
+			margin: 0;
+		}
+	}
 }

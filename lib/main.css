@@ -105,3 +105,11 @@
 .bdo-dropdown .visible {
   display: inline-block;
 }
+/* line 30, sass/_bdo-dropdown.scss */
+.bdo-dropdown > ul {
+  text-align: left;
+}
+/* line 33, sass/_bdo-dropdown.scss */
+.bdo-dropdown > ul > li {
+  margin: 0;
+}
