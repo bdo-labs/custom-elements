@@ -16,7 +16,11 @@
 		},
 		"css": {
 			"entry": "lib/bundle.css",
-			"output": "build/bundle.css"
+			"output": "build/bundle.css",
+			"assets": {
+				"prefix": "assets/",
+				"dest": "build/assets"
+			}
 		}
 	},
 	"browserify": {

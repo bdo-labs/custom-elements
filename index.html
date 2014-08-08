@@ -6,10 +6,40 @@
 		<title>Custom elements test page</title>
 		<script src="build.js"></script>
 		<link rel="stylesheet" href="bundle.css">
+		<script>
+			angular.module('customElements').controller('testCtrl',
+				function ($scope, $filter) {
+					var filter = $filter('filter'),
+						results = [
+							{
+								title: 'Skatt og avgift'
+							},
+							{
+								title: 'Skatt og avgift'
+							},
+							{
+								title: ''
+							},
+							{
+								title: 'Revisjon'
+							}
+						];
+					$scope.searchFunc = function (searchString) {
+						return filter(results, {title: searchString});
+					}
+				}
+			);
+
+		</script>
 	</head>
 
-	<body ng-app="customElements">
+	<body ng-app="customElements" ng-controller="testCtrl">
 		<h1>Test page for custom elements</h1>
+
+		<section>
+			<h1>BDO Search</h1>
+			<div bdo-search="searchFunc" style="float: right"></div>
+		</section>
 
 		<section>
 			<h1>BDO Progress</h1>
@@ -42,6 +72,7 @@
 					</ul>
 				</div>
 			</div>
+		</section>
 	</body>
 
 </html>
