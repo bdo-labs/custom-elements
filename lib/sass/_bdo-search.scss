@@ -6,56 +6,65 @@
 .bdo-search {
 	$height: 25px;
 	$expanded-width: 200px;
+	$default-transition: .5s ease-out;
 
 	position: relative;
 	display: inline-block;
+	overflow: visible;
+
+	height: $height;
+	width: $height;
 
 	input {
-		position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
 		z-index: 2;
-
-		float: right;
 
 		width: 0;
 		height: $height;
 		padding: 0 0 0 $height;
-		margin-left: -$height;
 
-		transition: width .5s ease-out,
-			background .5s ease-out,
-			padding .5s ease-out;
+		transition: width $default-transition,
+			background $default-transition,
+			padding $default-transition;
 
 		background: none;
 		border: none;
 	}
 
+	input:focus {
+		z-index: 0;
+		outline: none;
+		width: $expanded-width - $height;
+		background: $light-grey;
+	}
+
+
 	&.focused i {
 		color: white;
+		right: $expanded-width - $height;
 	}
 
 	i {
-		position: relative;
+		position: absolute;
+		right: 0;
+		top: 0;
 		z-index: 1;
 
 		width: $height;
-		float: right;
 
 		text-align: center;
 		line-height: $height;
 		font-size: 110%;
-	}
 
-	input:focus {
-		z-index: 0;
-		width: $expanded-width;
-		background: $light-grey;
+		transition: right $default-transition;
 	}
-	
 
 	// "Drop down"
 	*:nth-child(3) {
 		background: white;
-		width: 100%;
+		width: $expanded-width;
 		position: absolute;
 		right: 0;
 		top: 100%;
