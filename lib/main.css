@@ -113,3 +113,56 @@
 .bdo-dropdown > ul > li {
   margin: 0;
 }
+
+/**
+ * Search bar that expands when in focus
+ */
+/* line 6, sass/_bdo-search.scss */
+.bdo-search {
+  position: relative;
+  display: inline-block;
+}
+/* line 13, sass/_bdo-search.scss */
+.bdo-search input {
+  position: relative;
+  z-index: 2;
+  float: right;
+  width: 0;
+  height: 25px;
+  padding: 0 0 0 25px;
+  margin-left: -25px;
+  transition: width .5s ease-out, background .5s ease-out, padding .5s ease-out;
+  background: none;
+  border: none;
+}
+/* line 32, sass/_bdo-search.scss */
+.bdo-search.focused i {
+  color: white;
+}
+/* line 36, sass/_bdo-search.scss */
+.bdo-search i {
+  position: relative;
+  z-index: 1;
+  width: 25px;
+  float: right;
+  text-align: center;
+  line-height: 25px;
+  font-size: 110%;
+}
+/* line 48, sass/_bdo-search.scss */
+.bdo-search input:focus {
+  z-index: 0;
+  width: 200px;
+  background: #c8c8c8;
+}
+/* line 56, sass/_bdo-search.scss */
+.bdo-search *:nth-child(3) {
+  background: white;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

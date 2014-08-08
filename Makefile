@@ -18,8 +18,8 @@ REPORTER?=spec
 # Sources
 #
 
-SRC:=$(shell find -E lib -regex '/^.*(html|js|json|css)$$/')
-TESTS:=$(shell find lib -name '*.test.js')
+SRC:=$(wildcard lib/*)
+TESTS:=$(wildcard test/*.test.js)
 
 
 #

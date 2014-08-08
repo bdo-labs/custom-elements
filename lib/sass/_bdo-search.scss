@@ -1,0 +1,68 @@
+@import '../../node_modules/styles/lib/sass/variables-and-mixins';
+
+/**
+ * Search bar that expands when in focus
+ */
+.bdo-search {
+	$height: 25px;
+	$expanded-width: 200px;
+
+	position: relative;
+	display: inline-block;
+
+	input {
+		position: relative;
+		z-index: 2;
+
+		float: right;
+
+		width: 0;
+		height: $height;
+		padding: 0 0 0 $height;
+		margin-left: -$height;
+
+		transition: width .5s ease-out,
+			background .5s ease-out,
+			padding .5s ease-out;
+
+		background: none;
+		border: none;
+	}
+
+	&.focused i {
+		color: white;
+	}
+
+	i {
+		position: relative;
+		z-index: 1;
+
+		width: $height;
+		float: right;
+
+		text-align: center;
+		line-height: $height;
+		font-size: 110%;
+	}
+
+	input:focus {
+		z-index: 0;
+		width: $expanded-width;
+		background: $light-grey;
+	}
+	
+
+	// "Drop down"
+	*:nth-child(3) {
+		background: white;
+		width: 100%;
+		position: absolute;
+		right: 0;
+		top: 100%;
+
+		list-style: none;
+
+		padding: 0;
+		margin: 0;
+	}
+}
