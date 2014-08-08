@@ -121,44 +121,51 @@
 .bdo-search {
   position: relative;
   display: inline-block;
+  overflow: visible;
+  height: 25px;
+  width: 25px;
 }
-/* line 13, sass/_bdo-search.scss */
+/* line 18, sass/_bdo-search.scss */
 .bdo-search input {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 2;
-  float: right;
   width: 0;
   height: 25px;
   padding: 0 0 0 25px;
-  margin-left: -25px;
-  transition: width .5s ease-out, background .5s ease-out, padding .5s ease-out;
+  transition: width 0.5s ease-out, background 0.5s ease-out, padding 0.5s ease-out;
   background: none;
   border: none;
 }
-/* line 32, sass/_bdo-search.scss */
+/* line 36, sass/_bdo-search.scss */
+.bdo-search input:focus {
+  z-index: 0;
+  outline: none;
+  width: 175px;
+  background: #c8c8c8;
+}
+/* line 44, sass/_bdo-search.scss */
 .bdo-search.focused i {
   color: white;
+  right: 175px;
 }
-/* line 36, sass/_bdo-search.scss */
+/* line 49, sass/_bdo-search.scss */
 .bdo-search i {
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
   z-index: 1;
   width: 25px;
-  float: right;
   text-align: center;
   line-height: 25px;
   font-size: 110%;
+  transition: right 0.5s ease-out;
 }
-/* line 48, sass/_bdo-search.scss */
-.bdo-search input:focus {
-  z-index: 0;
-  width: 200px;
-  background: #c8c8c8;
-}
-/* line 56, sass/_bdo-search.scss */
+/* line 65, sass/_bdo-search.scss */
 .bdo-search *:nth-child(3) {
   background: white;
-  width: 100%;
+  width: 200px;
   position: absolute;
   right: 0;
   top: 100%;
