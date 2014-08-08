@@ -12,7 +12,11 @@
 	"atomify": {
 		"js": {
 			"entry": "lib/index.js",
-			"output": "build/build.js"
+			"output": "build/build.js",
+			"assets": {
+				"prefix": "assets/",
+				"dest": "build/assets"
+			}
 		},
 		"css": {
 			"entry": "index.css",
