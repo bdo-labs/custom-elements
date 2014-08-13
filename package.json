@@ -30,6 +30,9 @@
 	"browserify": {
 		"transform": [
 			"partialify"
+		],
+		"ignore": [
+			"moment"
 		]
 	},
 	"devDependencies": {
@@ -42,6 +45,7 @@
 		"styles": "git://github.com/bdo-labs/styles"
 	},
 	"dependencies": {
-		"angular": "^1.2.18"
+		"angular": "^1.2.18",
+		"pikaday": "git://github.com/bdo-labs/pikaday#reworkify"
 	}
 }
