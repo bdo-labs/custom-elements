@@ -29,7 +29,6 @@ TESTS:=$(wildcard test/*.test.js)
 build: node_modules $(SRC)
 	mkdir -p $@
 	atomify
-	cp index.html $@/
 	@echo ""
 	@echo "    custom-elements was built!"
 	@echo ""
