@@ -1,0 +1,24 @@
+@import '../../node_modules/styles/lib/sass/variables-and-mixins';
+.bdo-date-picker {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 600;
+	width: 100px;
+	cursor: pointer;
+}
+
+.is-today .pika-button {
+	color: $strategi-color;
+}
+
+.is-selected .pika-button {
+	background: $strategi-color;
+	color: #fff;
+}
+
+.pika-button:hover {
+	background: $warning-color !important;
+}
