@@ -1,91 +1,92 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Custom elements test page</title>
-		<script src="build.js"></script>
-		<link rel="stylesheet" href="bundle.css">
-		<script>
-			angular.module('customElements').controller('testCtrl',
-				function ($scope, $filter) {
-					var filter = $filter('filter'),
-						results = [
-							{
-								title: 'Skatt og avgift'
-							},
-							{
-								title: 'Rådgivning'
-							},
-							{
-								title: 'Mitt tiltak'
-							},
-							{
-								title: 'Revisjon'
-							}
-						];
-					$scope.searchFunc = function (searchString) {
-						return filter(results, {title: searchString});
-					}
-				}
-			);
+  <head>
+    <meta charset="utf-8">
+    <title>Custom elements test page</title>
+    <script src="build.js"></script>
+    <link rel="stylesheet" href="node_modules/testbed.css/index.css">
+    <link rel="stylesheet" href="bundle.css">
+    <script>
+      angular.module('customElements').controller('testCtrl',
+        function ($scope, $filter) {
+          var filter = $filter('filter'),
+            results = [
+              {
+                title: 'Skatt og avgift'
+              },
+              {
+                title: 'Rådgivning'
+              },
+              {
+                title: 'Mitt tiltak'
+              },
+              {
+                title: 'Revisjon'
+              }
+            ];
+          $scope.searchFunc = function (searchString) {
+            return filter(results, {title: searchString});
+          }
+        }
+      );
+    </script>
+  </head>
 
-		</script>
-	</head>
+  <body ng-app="customElements" ng-controller="testCtrl">
+    <main>
+      <h1>Test page for custom elements</h1>
 
-	<body ng-app="customElements" ng-controller="testCtrl">
-		<h1>Test page for custom elements</h1>
+      <section>
+        <div bdo-logo></div>
+      </section>
 
-		<section>
-			<div bdo-logo></div>
-		</section>
+      <section>
+        <h1>BDO Search</h1>
+        <div style="float:right">
+          This is just some text to check that the bar does not push
+          anything to the left when expanding.
+          <div bdo-search="searchFunc"></div>
+        </div>
+      </section>
 
-		<section>
-			<h1>BDO Search</h1>
-			<div style="float:right">
-				This is just some text to check that the bar does not push
-				anything to the left when expanding.
-				<div bdo-search="searchFunc"></div>
-			</div>
-		</section>
+      <section>
+        <h1>BDO Progress</h1>
+        <div bdo-progress="10" bdo-progress-high="80" bdo-progress-low="20"
+          style="width: 200px"></div>
+        <div bdo-progress="40" bdo-progress-high="80" bdo-progress-low="20"
+          style="width: 200px"></div>
+        <div bdo-progress="90" bdo-progress-high="80" bdo-progress-low="20"
+          style="width: 200px"></div>
 
-		<section>
-			<h1>BDO Progress</h1>
-			<div bdo-progress="10" bdo-progress-high="80" bdo-progress-low="20"
-				style="width: 200px"></div>
-			<div bdo-progress="40" bdo-progress-high="80" bdo-progress-low="20"
-				style="width: 200px"></div>
-			<div bdo-progress="90" bdo-progress-high="80" bdo-progress-low="20"
-				style="width: 200px"></div>
+        <input type="range" min="0" max="100" ng-model="testvalue">
+        <div bdo-progress="testvalue" bdo-progress-high="80"
+            bdo-progress-low="20" style="width: 200px"></div>
+      </section>
 
-			<input type="range" min="0" max="100" ng-model="testvalue">
-			<div bdo-progress="testvalue" bdo-progress-high="80"
-					bdo-progress-low="20" style="width: 200px"></div>
-		</section>
+      <section ng-init="switched=true">
+        <h1>BDO Switch</h1>
+        <div bdo-switch="switched"></div>
+      </section>
 
-		<section ng-init="switched=true">
-			<h1>BDO Switch</h1>
-			<div bdo-switch="switched"></div>
-		</section>
+      <section>
+        <h1>BDO Dropdown</h1>
+        <div bdo-dropdown>
+          <a href="">I'm a dropdown</a>
+          <div>
+            Unclickable content
+            <ul>
+              <li><a href="">Clickable content</a></li>
+              <li><a href="">More clickable</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-		<section>
-			<h1>BDO Dropdown</h1>
-			<div bdo-dropdown>
-				<a href="">I'm a dropdown</a>
-				<div>
-					Unclickable content
-					<ul>
-						<li><a href="">Clickable content</a></li>
-						<li><a href="">More clickable</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<section>
-			<h1>BDO Date Picker</h1>
-			<div bdo-date-picker></div>
-		</section>
-	</body>
+      <section>
+        <h1>BDO Date Picker</h1>
+        <div bdo-date-picker></div>
+      </section>
+    </main>
+  </body>
 
 </html>

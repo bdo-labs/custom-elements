@@ -1,25 +1,20 @@
 
 Custom Elements
-============
+===============
 
 A collection of small elements used across the application (mostly directives).
 
 
 ## Installation
 
-    $ git clone https://github.com/bdo-labs/custom-elements.git
-    $ make -s
-
-
-## Running tests
-
-    $ make -s test
+    $ npm install bdo-labs/custom-elements
+    $ npm start
 
 
 ## API
 
-```Javascript
-    require('custom-elements');
+```javascript
+require('custom-elements');
 ```
 
 The module is then registered with angular and can be used by including
@@ -30,7 +25,7 @@ The module is then registered with angular and can be used by including
 
 The MIT License
 
-Copyright &copy; 2014, BDO-labs &lt;bdo-labs@bdo.no&gt;
+Copyright &copy; 2014, BDO-labs &lt;labs@bdo.no&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the "Software"),

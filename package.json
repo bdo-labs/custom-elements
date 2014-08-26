@@ -1,51 +1,51 @@
 {
-	"name": "custom-elements",
-	"version": "0.0.0",
-	"description": "Collection of small custom elements used across the application.",
-	"main": "lib/index.js",
-	"repository": "git://github.com/bdo-labs/custom-elements.git",
-	"license": "MIT",
-	"style": "lib/main.css",
-	"scripts": {
-		"test": "karma start"
-	},
-	"atomify": {
-		"js": {
-			"entry": "lib/index.js",
-			"output": "build/build.js",
-			"assets": {
-				"prefix": "assets/",
-				"dest": "build/assets"
-			}
-		},
-		"css": {
-			"entry": "index.css",
-			"output": "build/bundle.css",
-			"assets": {
-				"prefix": "assets/",
-				"dest": "build/assets"
-			}
-		}
-	},
-	"browserify": {
-		"transform": [
-			"partialify"
-		],
-		"ignore": [
-			"moment"
-		]
-	},
-	"devDependencies": {
-		"atomify": "^3.1.2",
-		"browserify": "^4.2.0",
-		"karma": "^0.12.16",
-		"karma-browserifast": "^0.6.1",
-		"karma-jasmine": "^0.1.5",
-		"partialify": "^3.1.1",
-		"styles": "git://github.com/bdo-labs/styles"
-	},
-	"dependencies": {
-		"angular": "^1.2.18",
-		"pikaday": "git://github.com/bdo-labs/pikaday#reworkify"
-	}
+  "name": "custom-elements",
+  "version": "0.0.0",
+  "description": "Collection of small custom elements used across the application.",
+  "main": "lib/index.js",
+  "repository": "git://github.com/bdo-labs/custom-elements.git",
+  "license": "MIT",
+  "style": "index.css",
+  "scripts": {
+    "start": "atomify --server [ --path index.html --open ] --sync",
+    "build": "atomify",
+    "clean": "rm -fr build"
+  },
+  "atomify": {
+    "assets": {
+      "prefix": "assets/",
+      "dest": "build/assets"
+    },
+    "js": {
+      "entry": "lib/index.js",
+      "alias": "build.js",
+      "output": "build/build.js"
+    },
+    "css": {
+      "entry": "index.css",
+      "alias": "bundle.css",
+      "output": "build/bundle.css"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "partialify"
+    ],
+    "ignore": [
+      "moment"
+    ]
+  },
+  "devDependencies": {
+    "atomify": "^3.1.2",
+    "browserify": "^4.2.0",
+    "karma": "^0.12.16",
+    "karma-browserifast": "^0.6.1",
+    "karma-jasmine": "^0.1.5",
+    "partialify": "^3.1.1",
+    "testbed": "bdo-labs/testbed.css"
+  },
+  "dependencies": {
+    "angular": "^1.2.18",
+    "pikaday": "bdo-labs/pikaday#reworkify"
+  }
 }
